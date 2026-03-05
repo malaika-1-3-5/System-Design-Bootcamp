@@ -1,3 +1,5 @@
+import uuid
+
 from fastapi import FastAPI, APIRouter, status, HTTPException
 from sqlalchemy import create_engine, Column, String, Float, DateTime
 from sqlalchemy.dialects.postgresql import UUID
@@ -8,12 +10,12 @@ engine = create_engine("postgresql://agriadmin:agriadmin123@localhost/agri_db")
 SessionLocal = sessionmaker[Session](autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
+app = FastAPI() #Creating an instance of FastAPI
+app_v1 = APIRouter(prefix="/api/v1", tags=["v1"])
+
 @app.on_event("startup")
 def startup_event():
     Base.metadata.create_all(bind=engine)
-
-app = FastAPI() #Creating an instance of FastAPI
-app_v1 = APIRouter(prefix="/api/v1", tags=["v1"])
 
 users = ["user1", "user2", "user4"]
 
