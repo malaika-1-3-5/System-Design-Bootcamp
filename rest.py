@@ -34,6 +34,8 @@ class User(Base):
     email = Column(String(100), nullable=False)
     password = Column(String(100), nullable=False)
 
+
+
 def get_db():
     db = SessionLocal()
     try:
@@ -42,8 +44,10 @@ def get_db():
         db.close()
 
 @app_v1.get("/users/{id}", status_code=status.HTTP_200_OK)
-def getuserbyId(id: int):
-    user = User(id=id, name="John Doe", email="john@example.com", password="securepassword")
+def getuserbyId(id: int, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.id == id).first()
+    if not user:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
     return user
 
 class UserCreate(BaseModel):
@@ -55,6 +59,9 @@ class UserResponse(BaseModel):
     id: uuid.UUID
     name: str
     email: str
+
+    #response = UserResponse(id=user.id, name=user.name, email=user.email)
+    #return response
 
 @app_v1.post("/users", status_code=status.HTTP_201_CREATED)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
