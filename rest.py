@@ -1,6 +1,5 @@
 import uuid
-
-from fastapi import FastAPI, APIRouter, status, HTTPException
+from fastapi import FastAPI, APIRouter, status, HTTPException, Depends
 from sqlalchemy import create_engine, Column, String, Float, DateTime
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.ext.declarative import declarative_base
@@ -46,7 +45,7 @@ def getuserbyId(id: int):
     return user
 
 @app_v1.post("/users", status_code=status.HTTP_201_CREATED)
-def create_user(user: UserCreate,db: Session = Depends(get_db)):
+def create_user(user: User,db: Session = Depends(get_db)):
     user = User(name=user.name, email=user.email, password=user.password)
     db.add(user)
     db.commit()
