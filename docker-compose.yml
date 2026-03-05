@@ -1,10 +1,10 @@
 services:
-  #api:
-    #build:
-      #context: .
-      #dockerfile: Dockerfile
-    #ports:
-      #- "8000:8000"
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
 
   db_service:
     image: postgres:16-alpine
