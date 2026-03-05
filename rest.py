@@ -51,6 +51,11 @@ class UserCreate(BaseModel):
     email: str
     password: str
 
+class UserResponse(BaseModel):
+    id: uuid.UUID
+    name: str
+    email: str
+
 @app_v1.post("/users", status_code=status.HTTP_201_CREATED)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
     user = User(name=user.name, email=user.email, password=user.password)
