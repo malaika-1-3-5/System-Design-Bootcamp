@@ -6,7 +6,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 
-engine = create_engine("postgresql://agriadmin:agriadmin123@localhost/agri_db")
+engine = create_engine("postgresql://agriadmin:agriadmin123@localhost:5632/agri_db")
 SessionLocal = sessionmaker[Session](autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
@@ -46,8 +46,11 @@ def getuserbyId(id: int):
     return user
 
 @app_v1.post("/users", status_code=status.HTTP_201_CREATED)
-def create_users(user: str):
-    users.append(user)
+def create_user(user: UserCreate,db: Session = Depends(get_db)):
+    user = User(name=user.name, email=user.email, password=user.password)
+    db.add(user)
+    db.commit()
+    db.refresh(user)
     return {"message": "User created successfully"}
 
 #in terminal: uvicorn rest:app --port 8888
