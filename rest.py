@@ -4,6 +4,8 @@ from sqlalchemy import create_engine, Column, String, Float, DateTime
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
+from pydantic import BaseModel
+from contextlib import contextmanager
 
 engine = create_engine("postgresql://agriadmin:agriadmin123@localhost:5632/agri_db")
 SessionLocal = sessionmaker[Session](autocommit=False, autoflush=False, bind=engine)
@@ -44,8 +46,13 @@ def getuserbyId(id: int):
     user = User(id=id, name="John Doe", email="john@example.com", password="securepassword")
     return user
 
+class UserCreate(BaseModel):
+    name: str
+    email: str
+    password: str
+
 @app_v1.post("/users", status_code=status.HTTP_201_CREATED)
-def create_user(user: User,db: Session = Depends(get_db)):
+def create_user(user: UserCreate, db: Session = Depends(get_db)):
     user = User(name=user.name, email=user.email, password=user.password)
     db.add(user)
     db.commit()
