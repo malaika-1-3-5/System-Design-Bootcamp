@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker, Session
 from pydantic import BaseModel
 from contextlib import contextmanager
 
-engine = create_engine("postgresql://agriadmin:agriadmin123@db_service:5432/agri_db")
+engine = create_engine("postgresql://agriadmin:agriadmin123@localhost:5632/agri_db")
 SessionLocal = sessionmaker[Session](autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
