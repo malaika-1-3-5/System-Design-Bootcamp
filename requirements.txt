@@ -16,3 +16,24 @@ fastapi-users[sqlalchemy]
 
 # AsyncPG
 asyncpg
+
+# Kafka
+aiokafka
+
+
+# AI / ML - RAG, Agentic
+langchain
+langchain-community
+langchain-openai
+langgraph
+qdrant-client
+sentence-transformers
+
+
+# AI / ML - Computer Vision
+torch
+torchvision
+ultralytics
+roboflow
+pillow
+matplotlib
