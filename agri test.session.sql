@@ -1,1 +1,1 @@
-UPDATE users SET is_superuser = TRUE WHERE email = 'abc@gmail.com';
+UPDATE users SET role = 'farmer' WHERE email = 'abc@gmail.com';
