@@ -1,0 +1,1 @@
+UPDATE users SET is_superuser = TRUE WHERE email = 'abc@gmail.com';
