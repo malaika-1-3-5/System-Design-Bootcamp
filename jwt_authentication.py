@@ -1,6 +1,7 @@
 from datetime import datetime
 from typing import Literal, Optional
 import uuid
+import os
 
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi_users import BaseUserManager, FastAPIUsers, UUIDIDMixin, schemas
@@ -22,7 +23,10 @@ import logging
 
 SECRET_KEY = "malaika-r-k-9-8"
 DATABASE_URL = (
-    "postgresql+asyncpg://agriadmin:agriadmin123@localhost:5632/agri_db"
+    os.getenv(
+        "DATABASE_URL",
+        "postgresql+asyncpg://agriadmin:agriadmin123@db_service:5432/agri_db",
+    )
 )
 ACCESS_TOKEN_EXPIRE_SECONDS = 30 * 60
 logger = logging.getLogger(__name__)

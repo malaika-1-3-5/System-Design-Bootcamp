@@ -1,1 +1,2 @@
-UPDATE users SET role = 'farmer' WHERE email = 'abc@gmail.com';
+SELECT COUNT(*) FROM events;
+SELECT sensor_id, temperature FROM events LIMIT 20;
