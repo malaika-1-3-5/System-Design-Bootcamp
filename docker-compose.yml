@@ -26,6 +26,35 @@ services:
       kafka:
         condition: service_healthy
 
+  disease_gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile_disease_gateway.Dockerfile
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      DISEASE_TOPIC: disease.events
+      DATABASE_URL: postgresql://agriadmin:agriadmin123@db_service:5432/agri_db
+      IMAGE_STORAGE_DIR: /app/uploads
+    ports:
+      - "8002:8000"
+    depends_on:
+      kafka:
+        condition: service_healthy
+      db_service:
+        condition: service_started
+
+  notification_service:
+    build:
+      context: .
+      dockerfile: Dockerfile_notification.Dockerfile
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      DISEASE_TOPIC: disease.events
+      CONSUMER_GROUP: notification-service-group
+    depends_on:
+      kafka:
+        condition: service_healthy
+
   db_service:
     image: postgres:16-alpine
     container_name: agri_postgres
