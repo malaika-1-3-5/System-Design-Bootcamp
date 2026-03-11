@@ -5,7 +5,7 @@ Exposes REST endpoints for the RAG pipeline.
 from fastapi import FastAPI, Query
 from pydantic import BaseModel
 
-from rag_langchain import RAGPipeline
+from RAG.lang_chain import RAGPipeline
 
 rag = RAGPipeline()
 
