@@ -21,7 +21,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 load_dotenv(dotenv_path=Path(__file__).parent / '.env')
-KNOWLEDGE_FILE = Path(__file__).parent / 'farming_knowledge_06.json'
+KNOWLEDGE_FILE = Path(__file__).parent / 'farming_knowledge_2.json'
 PROMPTS_FILE = Path(__file__).parent / 'prompts.json'
 
 from sentence_transformers import SentenceTransformer

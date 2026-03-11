@@ -1,0 +1,178 @@
+[
+  {
+    "id": "doc_1",
+    "content": "Tomato Late Blight is caused by Phytophthora infestans. It produces dark, water-soaked lesions on leaves and stems. The disease spreads rapidly in cool, moist conditions. Treatment includes copper-based fungicide (Bordeaux mixture) or Mancozeb at first signs. Organic option: neem oil spray every 7 days.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "disease",
+      "class": "Tomato_Late_blight"
+    }
+  },
+  {
+    "id": "doc_2",
+    "content": "Rice needs 5000-6000 liters per hectare during the vegetative stage. Maintain 5cm standing water in paddies. During flowering, this is the most critical period - do not let fields dry. Reduce irrigation gradually during ripening and drain fields 2 weeks before harvest.",
+    "metadata": {
+      "crop": "Rice",
+      "topic": "irrigation"
+    }
+  },
+  {
+    "id": "doc_3",
+    "content": "The best organic fertilizer for tomatoes is compost enriched with bone meal for phosphorus. Apply NPK 10-26-26 for disease resistance. Calcium nitrate prevents blossom end rot. Side-dress with potassium when fruiting begins.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "fertilizer"
+    }
+  },
+  {
+    "id": "doc_4",
+    "content": "Wheat Brown Rust is caused by Puccinia triticina. Orange-brown pustules appear on upper leaf surfaces. Apply Propiconazole 25EC at 0.1% as foliar spray at first sign on flag leaf. Plant resistant cultivars and avoid late-sown crops to prevent infection.",
+    "metadata": {
+      "crop": "Wheat",
+      "topic": "disease"
+    }
+  },
+  {
+    "id": "doc_5",
+    "content": "Drip irrigation saves 30-50% more water compared to flood irrigation. It delivers water directly to plant roots, reducing evaporation and disease risk. Best suited for row crops like tomatoes, peppers, and strawberries. Initial cost is higher but ROI within 2 seasons.",
+    "metadata": {
+      "crop": "General",
+      "topic": "irrigation"
+    }
+  },
+  {
+    "id": "doc_6",
+    "content": "Neem-based biopesticides are effective against a wide range of pests and diseases. Neem oil (Azadirachtin) works as an antifeedant, repellent, and growth regulator. Use 5ml/liter water as foliar spray. Safe for beneficial insects when used correctly. Approved for organic farming.",
+    "metadata": {
+      "crop": "General",
+      "topic": "organic"
+    }
+  },
+  {
+    "id": "doc_7",
+    "content": "Bell Pepper Bacterial Spot is caused by Xanthomonas species. Symptoms include small water-soaked spots that turn dark brown with yellow halos on leaves and fruits. Spread is favored by warm, humid weather. Management includes copper bactericides, streptocycline sprays, use of certified seeds, and avoiding overhead irrigation.",
+    "metadata": {
+      "crop": "Pepper",
+      "topic": "disease",
+      "class": "Pepper__bell___Bacterial_spot"
+    }
+  },
+  {
+    "id": "doc_8",
+    "content": "Healthy bell pepper plants show uniform green leaves, vigorous upright growth, and blemish-free fruits. Maintain balanced NPK fertilization, proper spacing for airflow, and regular scouting to keep pepper plants healthy.",
+    "metadata": {
+      "crop": "Pepper",
+      "topic": "healthy",
+      "class": "Pepper__bell___healthy"
+    }
+  },
+  {
+    "id": "doc_9",
+    "content": "Potato Early Blight is caused by Alternaria solani. It produces concentric ring spots on older leaves leading to yellowing and defoliation. Control with Mancozeb or Chlorothalonil sprays at first appearance. Maintain proper plant nutrition and crop rotation.",
+    "metadata": {
+      "crop": "Potato",
+      "topic": "disease",
+      "class": "Potato___Early_blight"
+    }
+  },
+  {
+    "id": "doc_10",
+    "content": "Potato Late Blight, caused by Phytophthora infestans, creates water-soaked lesions that rapidly turn brown and destroy foliage. It spreads quickly in cool, humid weather. Use preventive sprays of Metalaxyl + Mancozeb and ensure good field drainage.",
+    "metadata": {
+      "crop": "Potato",
+      "topic": "disease",
+      "class": "Potato___Late_blight"
+    }
+  },
+  {
+    "id": "doc_11",
+    "content": "Healthy potato plants have lush green foliage, strong stems, and uniform tuber development. Maintain proper earthing-up, balanced fertilization, and timely irrigation to keep plants disease-free.",
+    "metadata": {
+      "crop": "Potato",
+      "topic": "healthy",
+      "class": "Potato___healthy"
+    }
+  },
+
+  {
+    "id": "doc_12",
+    "content": "Tomato Bacterial Spot is caused by Xanthomonas species. It shows small dark lesions with yellow halos on leaves and fruits. Manage using copper sprays, streptocycline, resistant varieties, and avoiding leaf wetness.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "disease",
+      "class": "Tomato_Bacterial_spot"
+    }
+  },
+  {
+    "id": "doc_13",
+    "content": "Tomato Early Blight is caused by Alternaria solani. Symptoms include target-like concentric rings on older leaves. Control with Mancozeb or Chlorothalonil sprays and practice crop rotation.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "disease",
+      "class": "Tomato_Early_blight"
+    }
+  },
+  {
+    "id": "doc_14",
+    "content": "Tomato Leaf Mold is caused by Passalora fulva. Yellow patches appear on upper leaf surfaces with olive-green mold underneath. Common in high humidity greenhouses. Improve ventilation and spray Chlorothalonil or Mancozeb.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "disease",
+      "class": "Tomato_Leaf_Mold"
+    }
+  },
+  {
+    "id": "doc_15",
+    "content": "Tomato Septoria Leaf Spot causes numerous small circular spots with gray centers and dark margins. Remove infected lower leaves and apply protective fungicides like Mancozeb. Avoid overhead irrigation.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "disease",
+      "class": "Tomato_Septoria_leaf_spot"
+    }
+  },
+  {
+    "id": "doc_16",
+    "content": "Two-spotted spider mites in tomato cause fine stippling, yellowing, and webbing on leaves. They thrive in hot, dry conditions. Control using miticides, neem oil, or release of predatory mites. Maintain adequate humidity.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "pest",
+      "class": "Tomato_Spider_mites_Two_spotted_spider_mite"
+    }
+  },
+  {
+    "id": "doc_17",
+    "content": "Tomato Target Spot is caused by Corynespora cassiicola. Brown circular lesions with concentric rings appear on leaves. Manage with crop rotation, resistant varieties, and fungicides like Chlorothalonil.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "disease",
+      "class": "Tomato__Target_Spot"
+    }
+  },
+  {
+    "id": "doc_18",
+    "content": "Tomato Yellow Leaf Curl Virus is transmitted by whiteflies. Leaves curl upward, turn yellow, and plants become stunted. Control whiteflies using Imidacloprid or neem oil, remove infected plants early, and use resistant hybrids.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "disease",
+      "class": "Tomato__Tomato_YellowLeaf__Curl_Virus"
+    }
+  },
+  {
+    "id": "doc_19",
+    "content": "Tomato Mosaic Virus causes mottled light and dark green patches on leaves with distortion and reduced yield. The virus spreads mechanically. Remove infected plants, disinfect tools, and use resistant varieties.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "disease",
+      "class": "Tomato__Tomato_mosaic_virus"
+    }
+  },
+  {
+    "id": "doc_20",
+    "content": "Healthy tomato plants have deep green leaves, strong stems, and uniform fruit set. Maintain proper staking, balanced fertilization, and regular pest scouting to keep tomato crops healthy.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "healthy",
+      "class": "Tomato_healthy"
+    }
+  }
+]

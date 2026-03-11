@@ -2,10 +2,27 @@
 Exposes REST endpoints for the RAG pipeline.
 """
 
+import sys
+from pathlib import Path
+
 from fastapi import FastAPI, Query
 from pydantic import BaseModel
 
-from RAG.lang_chain import RAGPipeline
+CURRENT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = CURRENT_DIR.parent
+
+# Make imports resilient across different launch directories.
+if str(CURRENT_DIR) not in sys.path:
+    sys.path.insert(0, str(CURRENT_DIR))
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+try:
+    # Works when launched from repository root (e.g., `uvicorn RAG.rag_api:app`)
+    from RAG.lang_chain import RAGPipeline
+except ModuleNotFoundError:
+    # Works when launched from inside the RAG directory (e.g., `uvicorn rag_api:app`)
+    from lang_chain import RAGPipeline
 
 rag = RAGPipeline()
 
@@ -53,5 +70,5 @@ def list_documents():
 @app.get("/search")
 def search_only(q: str = Query(...), n: int = Query(3)):
     """Search without LLM — shows just the retrieval step."""
-    results = rag.vectorstore.search(q, n_results=n)
+    results = rag.search(q, n_results=n)
     return {"query": q, "results": results}
