@@ -1,0 +1,50 @@
+[
+  {
+    "id": "doc_1",
+    "content": "Tomato Late Blight is caused by Phytophthora infestans. It produces dark, water-soaked lesions on leaves and stems. The disease spreads rapidly in cool, moist conditions. Treatment includes copper-based fungicide (Bordeaux mixture) or Mancozeb at first signs. Organic option: neem oil spray every 7 days.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "disease"
+    }
+  },
+  {
+    "id": "doc_2",
+    "content": "Rice needs 5000-6000 liters per hectare during the vegetative stage. Maintain 5cm standing water in paddies. During flowering, this is the most critical period - do not let fields dry. Reduce irrigation gradually during ripening and drain fields 2 weeks before harvest.",
+    "metadata": {
+      "crop": "Rice",
+      "topic": "irrigation"
+    }
+  },
+  {
+    "id": "doc_3",
+    "content": "The best organic fertilizer for tomatoes is compost enriched with bone meal for phosphorus. Apply NPK 10-26-26 for disease resistance. Calcium nitrate prevents blossom end rot. Side-dress with potassium when fruiting begins.",
+    "metadata": {
+      "crop": "Tomato",
+      "topic": "fertilizer"
+    }
+  },
+  {
+    "id": "doc_4",
+    "content": "Wheat Brown Rust is caused by Puccinia triticina. Orange-brown pustules appear on upper leaf surfaces. Apply Propiconazole 25EC at 0.1% as foliar spray at first sign on flag leaf. Plant resistant cultivars and avoid late-sown crops to prevent infection.",
+    "metadata": {
+      "crop": "Wheat",
+      "topic": "disease"
+    }
+  },
+  {
+    "id": "doc_5",
+    "content": "Drip irrigation saves 30-50% more water compared to flood irrigation. It delivers water directly to plant roots, reducing evaporation and disease risk. Best suited for row crops like tomatoes, peppers, and strawberries. Initial cost is higher but ROI within 2 seasons.",
+    "metadata": {
+      "crop": "General",
+      "topic": "irrigation"
+    }
+  },
+  {
+    "id": "doc_6",
+    "content": "Neem-based biopesticides are effective against a wide range of pests and diseases. Neem oil (Azadirachtin) works as an antifeedant, repellent, and growth regulator. Use 5ml/liter water as foliar spray. Safe for beneficial insects when used correctly. FSSAI approved for organic farming.",
+    "metadata": {
+      "crop": "General",
+      "topic": "organic"
+    }
+  }
+]
