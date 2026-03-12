@@ -18,7 +18,7 @@ except ModuleNotFoundError:
 
 BASE_DIR = Path(__file__).parent
 ENV_PATH = BASE_DIR / ".env"
-KNOWLEDGE_FILE = BASE_DIR / "farming_knowledge.json"
+KNOWLEDGE_FILE = BASE_DIR / "farming_knowledge .json"
 PROMPTS_FILE = BASE_DIR / "prompts.json"
 
 load_dotenv(ENV_PATH)
