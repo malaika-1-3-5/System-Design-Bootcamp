@@ -79,16 +79,16 @@ services:
     volumes:
       - qdrant_data:/qdrant/storage
 
-  nginx:
-    image: nginx:alpine
-    container_name: sf-nginx
-    restart: unless-stopped
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-    depends_on:
-      - gateway
+  # nginx:
+  #   image: nginx:alpine
+  #   container_name: sf-nginx
+  #   restart: unless-stopped
+  #   ports:
+  #     - "80:80"
+  #   volumes:
+  #     - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+  #   depends_on:
+  #     - gateway
 
   gateway:
     build:
@@ -109,94 +109,94 @@ services:
       - ./migrations:/app/migrations
       - ./alembic.ini:/app/alembic.ini
 
-  disease-detection:
-    build:
-      context: .
-      dockerfile: disease_detection/Dockerfile
-    container_name: sf-disease-detection
-    restart: unless-stopped
-    ports:
-      - "8001:8001"
-    env_file: .env
-    depends_on:
-      postgres:
-        condition: service_healthy
-      kafka:
-        condition: service_healthy
-    volumes:
-      - ./shared:/app/shared
-      - upload_images:/app/uploads
-      - ./ai_ml_models/mobilenetv2_plantdisease.pt:/app/model/plant_disease_model.pth:ro
+  # disease-detection:
+  #   build:
+  #     context: .
+  #     dockerfile: disease_detection/Dockerfile
+  #   container_name: sf-disease-detection
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8001:8001"
+  #   env_file: .env
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #     kafka:
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./shared:/app/shared
+  #     - upload_images:/app/uploads
+  #     - ./ai_ml_models/mobilenetv2_plantdisease.pt:/app/model/plant_disease_model.pth:ro
 
-  ai-advisory:
-    build:
-      context: .
-      dockerfile: ai_advisory/Dockerfile
-    container_name: sf-ai-advisory
-    restart: unless-stopped
-    ports:
-      - "8002:8002"
-    env_file: .env
-    depends_on:
-      postgres:
-        condition: service_healthy
-      kafka:
-        condition: service_healthy
-      qdrant:
-        condition: service_started
-    volumes:
-      - ./shared:/app/shared
+  # ai-advisory:
+  #   build:
+  #     context: .
+  #     dockerfile: ai_advisory/Dockerfile
+  #   container_name: sf-ai-advisory
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8002:8002"
+  #   env_file: .env
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #     kafka:
+  #       condition: service_healthy
+  #     qdrant:
+  #       condition: service_started
+  #   volumes:
+  #     - ./shared:/app/shared
 
-  irrigation:
-    build:
-      context: .
-      dockerfile: irrigation/Dockerfile
-    container_name: sf-irrigation
-    restart: unless-stopped
-    ports:
-      - "8003:8003"
-    env_file: .env
-    depends_on:
-      postgres:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-    volumes:
-      - ./shared:/app/shared
+  # irrigation:
+  #   build:
+  #     context: .
+  #     dockerfile: irrigation/Dockerfile
+  #   container_name: sf-irrigation
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8003:8003"
+  #   env_file: .env
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./shared:/app/shared
 
-  market-price:
-    build:
-      context: .
-      dockerfile: market_price/Dockerfile
-    container_name: sf-market-price
-    restart: unless-stopped
-    ports:
-      - "8004:8004"
-    env_file: .env
-    depends_on:
-      postgres:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
-    volumes:
-      - ./shared:/app/shared
+  # market-price:
+  #   build:
+  #     context: .
+  #     dockerfile: market_price/Dockerfile
+  #   container_name: sf-market-price
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8004:8004"
+  #   env_file: .env
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./shared:/app/shared
 
-  notification:
-    build:
-      context: .
-      dockerfile: notification/Dockerfile
-    container_name: sf-notification
-    restart: unless-stopped
-    ports:
-      - "8005:8005"
-    env_file: .env
-    depends_on:
-      postgres:
-        condition: service_healthy
-      kafka:
-        condition: service_healthy
-    volumes:
-      - ./shared:/app/shared
+  # notification:
+  #   build:
+  #     context: .
+  #     dockerfile: notification/Dockerfile
+  #   container_name: sf-notification
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8005:8005"
+  #   env_file: .env
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #     kafka:
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./shared:/app/shared
 
 volumes:
   postgres_data:
