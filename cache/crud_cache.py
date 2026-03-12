@@ -86,3 +86,13 @@ def get_product(product_id: str):
         raise HTTPException(status_code=503, detail="Redis unavailable")
     
     raise HTTPException(status_code=404, detail=f"Product {product_id} not found in cache")
+
+
+@app.delete("/products/{product_id}", status_code=204)
+def delete_product(product_id: str):
+    try:
+        redis_client.delete(cache_key(product_id))
+        logger.info(f"Product deleted from cache with ID: {product_id}")
+    except redis.ConnectionError:
+        raise HTTPException(status_code=503, detail="Redis unavailable")
+    return None

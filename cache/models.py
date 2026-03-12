@@ -1,7 +1,6 @@
-from datetime import datetime
-
 from pydantic import BaseModel
 from typing import Optional
+from datetime import datetime
 import uuid
 
 class ProductCreate(BaseModel):
@@ -23,8 +22,8 @@ class ProductResponse(BaseModel):
     price: float
     description: Optional[str]
     created_at: datetime | str
-    update_at: datetime | str
+    updated_at: datetime | str
     source: str = "database"
 
-class Config:
-    from_attributes = True
+    class Config:
+        from_attributes = True
